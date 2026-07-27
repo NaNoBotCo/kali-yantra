@@ -1,4 +1,5 @@
 import math
+import os
 from PIL import Image, ImageDraw
 
 S = 8                      # supersample factor
@@ -81,5 +82,5 @@ d.ellipse([c - 5 * S, c - 5 * S, c + 5 * S, c + 5 * S], fill=BLACK)
 
 # downscale to exact 200x200
 out = img.resize((200, 200), Image.LANCZOS).convert("RGB")
-out.save("~/Desktop/catalog/kali_yantra.jpg", "JPEG", quality=95)
+out.save(os.path.expanduser("~/Desktop/catalog/kali_yantra.jpg"), "JPEG", quality=95)
 print("saved", out.size, out.mode)
